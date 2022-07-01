@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <title>HouseValley - Discover</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <nav class="container navbar navbar-expand-lg navbar-light my-5">
+                <img src="images/logo-dark.png" alt="Logo Dark" height="35" width="185">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about" class="nav-link">About Us</a></li>
+                        <li class="nav-item active"><a href="discover" class="nav-link">Discover</a></li>
+                        <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span>Toti Pham</span>
+                    <img src="images/avatar.png" alt="Avatar" class="rounded-circle border border-5 border-success"
+                        width="60">
+                </div>
+            </nav>
+        </div>
+        <div id="main">
+            <div class="container mb-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form action="search" method="GET">
+                            <input type="text" class="shadow mb-4" name="place" value="Thạch Hoà" />
+                            <iframe class="shadow" width="100%" height="30%" style="border:0" loading="lazy"
+                                allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAVR2X4a2N4zwtogFLmFXeOjbbIKqW06iw&q=Thach Hoa">
+                            </iframe>
+                            <div class="d-flex flex-row justify-content-between align-items-center mt-3">
+                                <button class="btn btn-light shadow-sm disabled"><b>Sort</b></button>
+                                <select class="btn btn-light shadow-sm form-select w-25" name="created-date-sort">
+                                    <option selected>Created</option>
+                                    <option value="lastest">Lastest</option>
+                                    <option value="oldest">Oldest</option>
+                                  </select>
+                                <select class="btn btn-light shadow-sm form-select w-50" name="price-sort">
+                                    <option selected>Price</option>
+                                    <option value="lowest-first"><b>$</b> Lowest First</option>
+                                    <option value="highest-first"><b>$</b> Highest First</option>
+                                  </select>
+                            </div>
+                            <div class="price-range-filter">
+                                <div class="range_container mx-auto mt-5">
+                                    <div class="sliders_control">
+                                        <input id="fromSlider" type="range" value="100000" min="0" max="5000000" />
+                                        <input id="toSlider" type="range" value="600000" min="0" max="5000000" />
+                                    </div>
+                                    <div class="form_control">
+                                        <div class="form_control_container">
+                                            <div class="form_control_container__time">Min Price:</div>
+                                            <input name="fromPrice" class="form_control_container__time__input bg-white shadow-sm"
+                                                type="number" id="fromInput" value="100000" min="0" max="5000000" />
+                                        </div>
+                                        <div class="form_control_container">
+                                            <div class="form_control_container__time">Max Price:</div>
+                                            <input name="toPrice" class="form_control_container__time__input bg-white shadow-sm"
+                                                type="number" id="toInput" value="600000" min="0" max="5000000" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="utilities-filter d-flex flex-row justify-content-between mt-2">
+                                <div>
+                                    <img src="images/kitchen-icon.png" alt="">
+                                    <input type="text" pattern="\d*" class="shadow mb-4 d-inline" name="kitchen-num" value=""
+                                        maxlength="2" />
+                                </div>
+
+                                <div>
+                                    <img src="images/bed-icon.png" alt="">
+                                    <input type="text" pattern="\d*" class="shadow mb-4 d-inline" name="bed-num" value=""
+                                        maxlength="2" />
+                                </div>
+                                <div>
+                                    <img src="images/area-icon.png" alt="">
+                                    <input type="text" pattern="\d*" class="shadow mb-4 d-inline" name="area-num" value=""
+                                        maxlength="2" />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="search-keyword mt-3 mb-4">
+                            <span>Search result for</span>
+                            <span>"Thạch Hoà, Hà Nội"</span>
+                        </div>
+                        <div class="search-result">
+                            <a href="property.html" class="d-flex flex-row p-3 my-4 card-property bg-white shadow">
+                                <img src="images/thumbnail.png" alt="Property Thumbnail" width="260" height="160"
+                                    class="thumbnail">
+                                <div class="px-4 d-flex flex-column aligns-items-center w-100">
+                                    <p>Kí Túc Xá Ông Bà</p>
+                                    <div>
+                                        <span>₫2,000,000</span>
+                                        <span>/month</span>
+                                    </div>
+                                    <div class="d-flex flex-row mt-auto justify-content-between w-75">
+                                        <div>
+                                            <img src="images/kitchen-icon.png" alt="">
+                                            <span>1</span>
+                                        </div>
+                                        <div>
+                                            <img src="images/bed-icon.png" alt="">
+                                            <span>2</span>
+                                        </div>
+                                        <div>
+                                            <img src="images/area-icon.png" alt="">
+                                            <span>25m2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- 2 -->
+                            <div class="d-flex flex-row p-3 my-4 card-property bg-white shadow">
+                                <img src="images/thumbnail.png" alt="Property Thumbnail" width="260" height="160"
+                                    class="thumbnail">
+                                <div class="px-4 d-flex flex-column aligns-items-center w-100">
+                                    <p>Kí Túc Xá Ông Bà</p>
+                                    <div>
+                                        <span>₫2,000,000</span>
+                                        <span>/month</span>
+                                    </div>
+                                    <div class="d-flex flex-row mt-auto justify-content-between w-75">
+                                        <div>
+                                            <img src="images/kitchen-icon.png" alt="">
+                                            <span>1</span>
+                                        </div>
+                                        <div>
+                                            <img src="images/bed-icon.png" alt="">
+                                            <span>2</span>
+                                        </div>
+                                        <div>
+                                            <img src="images/area-icon.png" alt="">
+                                            <span>25m2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3 -->
+                            <div class="d-flex flex-row p-3 my-4 card-property bg-white shadow">
+                                <img src="images/thumbnail.png" alt="Property Thumbnail" width="260" height="160"
+                                    class="thumbnail">
+                                <div class="px-4 d-flex flex-column aligns-items-center w-100">
+                                    <p>Kí Túc Xá Ông Bà</p>
+                                    <div>
+                                        <span>₫2,000,000</span>
+                                        <span>/month</span>
+                                    </div>
+                                    <p>Thạch Hoà, Thạch Thất, Hà Nội</p>
+                                    <div class="d-flex flex-row mt-auto justify-content-between w-75">
+                                        <div>
+                                            <img src="images/kitchen-icon.png" alt="">
+                                            <span>1</span>
+                                        </div>
+                                        <div>
+                                            <img src="images/bed-icon.png" alt="">
+                                            <span>2</span>
+                                        </div>
+                                        <div>
+                                            <img src="images/area-icon.png" alt="">
+                                            <span>25m2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container d-flex justify-content-between align-items-center pt-3">
+            <div>
+                <img class="mb-3" src="images/logo-light.png" alt="HouseValley Logo Light">
+                <p>Một dự án được phát triển vì cộng đồng trong quá trình học môn PRJ301</p>
+                <div class="social mt-3">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+            <div class="mt-5">
+                <h3>About Phạm Trương Minh Đức</h3>
+                <a href="cv">My Curriculum Vitae</a>
+                <a href="projects">My Project</a>
+                <a href="contact">Contact</a>
+            </div>
+        </div>
+        <div class="container copyright mt-5">
+            <p>Copyright &copy;HouseValley. 2022. All right reserved.</p>
+        </div>
+    </div>
+    <script>
+        function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
+            const [from, to] = getParsed(fromInput, toInput);
+            fillSlider(fromInput, toInput, '#EBEBEB', '#306844', controlSlider);
+            if (from > to) {
+                fromSlider.value = to;
+                fromInput.value = to;
+            } else {
+                fromSlider.value = from;
+            }
+        }
+
+        function controlToInput(toSlider, fromInput, toInput, controlSlider) {
+            const [from, to] = getParsed(fromInput, toInput);
+            fillSlider(fromInput, toInput, '#EBEBEB', '#306844', controlSlider);
+            setToggleAccessible(toInput);
+            if (from <= to) {
+                toSlider.value = to;
+                toInput.value = to;
+            } else {
+                toInput.value = from;
+            }
+        }
+
+        function controlFromSlider(fromSlider, toSlider, fromInput) {
+            const [from, to] = getParsed(fromSlider, toSlider);
+            fillSlider(fromSlider, toSlider, '#EBEBEB', '#306844', toSlider);
+            if (from > to) {
+                fromSlider.value = to;
+                fromInput.value = to;
+            } else {
+                fromInput.value = from;
+            }
+        }
+
+        function controlToSlider(fromSlider, toSlider, toInput) {
+            const [from, to] = getParsed(fromSlider, toSlider);
+            fillSlider(fromSlider, toSlider, '#EBEBEB', '#306844', toSlider);
+            setToggleAccessible(toSlider);
+            if (from <= to) {
+                toSlider.value = to;
+                toInput.value = to;
+            } else {
+                toInput.value = from;
+                toSlider.value = from;
+            }
+        }
+
+        function getParsed(currentFrom, currentTo) {
+            const from = parseInt(currentFrom.value, 10);
+            const to = parseInt(currentTo.value, 10);
+            return [from, to];
+        }
+
+        function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+            const rangeDistance = to.max - to.min;
+            const fromPosition = from.value - to.min;
+            const toPosition = to.value - to.min;
+            controlSlider.style.background = `linear-gradient(
+              to right,
+              ${sliderColor} 0%,
+              ${sliderColor} ${(fromPosition) / (rangeDistance) * 100}%,
+              ${rangeColor} ${((fromPosition) / (rangeDistance)) * 100}%,
+              ${rangeColor} ${(toPosition) / (rangeDistance) * 100}%, 
+              ${sliderColor} ${(toPosition) / (rangeDistance) * 100}%, 
+              ${sliderColor} 100%)`;
+        }
+
+        function setToggleAccessible(currentTarget) {
+            const toSlider = document.querySelector('#toSlider');
+            if (Number(currentTarget.value) <= 0) {
+                toSlider.style.zIndex = 2;
+            } else {
+                toSlider.style.zIndex = 0;
+            }
+        }
+
+        const fromSlider = document.querySelector('#fromSlider');
+        const toSlider = document.querySelector('#toSlider');
+        const fromInput = document.querySelector('#fromInput');
+        const toInput = document.querySelector('#toInput');
+        fillSlider(fromSlider, toSlider, '#EBEBEB', '#306844', toSlider);
+        setToggleAccessible(toSlider);
+
+        fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, fromInput);
+        toSlider.oninput = () => controlToSlider(fromSlider, toSlider, toInput);
+        fromInput.oninput = () => controlFromInput(fromSlider, fromInput, toInput, toSlider);
+        toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>

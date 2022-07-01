@@ -1,0 +1,544 @@
+:root {
+    --main-bg-color: #306844;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Work Sans', sans-serif;
+    zoom: 90%;
+}
+
+body {
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--main-bg-color);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+a,
+p,
+span {
+    color: #575757;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0;
+}
+
+.btn {
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.btn.btn-light {
+    background: #fff;
+}
+
+.btn.btn-light.disabled {
+    background: #DEDEDE;
+}
+
+.btn-primary {
+    background: var(--main-bg-color);
+    outline: none;
+    border: none;
+}
+
+.btn.btn-primary a {
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #1e482d;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+    background: var(--main-bg-color);
+    box-shadow: none;
+}
+
+.btn-primary.disabled {
+    background: #41875a;
+}
+
+input.form-check-input:checked {
+    background: var(--main-bg-color);
+    border: none;
+    box-shadow: none;
+}
+
+input.form-check-input:focus {
+    box-shadow: none;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 315px;
+}
+
+.navbar .nav-link {
+    font-weight: 400;
+}
+
+.nav-item.active .nav-link {
+    font-weight: 700;
+    border-bottom: 4px solid var(--main-bg-color);
+}
+
+.navbar span {
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.user-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-wrapper .user-wrapper--menu{
+    background: #f7f7f7;
+    width: 200px;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 70px;
+    right: -10px;
+    display: none;
+    list-style: none;
+    padding: 0 0;
+}
+
+.user-wrapper .user-wrapper--menu::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    height: 20px;
+    width: 150px;
+}
+
+.user-wrapper:hover .user-wrapper--menu{
+    cursor: pointer;
+    display: block;
+}
+
+
+.user-wrapper .user-wrapper--menu li{
+    color: #575757;
+    line-height: 50px;
+    transition: 0.1s;
+}
+
+
+.user-wrapper .user-wrapper--menu li:hover{
+    background: #cecece;
+}
+
+.user-wrapper .user-wrapper--menu li:first-of-type{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.user-wrapper .user-wrapper--menu li:last-of-type{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.user-wrapper .user-wrapper--menu li a{
+    font-weight: 500;
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin-inline: 20px;
+}
+
+.user-wrapper .user-wrapper--menu a:hover{
+    color: #575757;
+}
+
+/* Homepage style */
+.banner {
+    position: relative;
+}
+
+.banner .form-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 23px;
+    background: white;
+    width: 666px;
+    height: 80px;
+}
+
+.banner .form-search input {
+    border: none;
+    outline: none;
+    width: 50%;
+    font-size: 20px;
+    border-right: 1px solid #ccc;
+    flex: 1;
+    display: block;
+    min-width: 0;
+}
+
+.banner .form-search .dropdown .dropdown-toggle {
+    font-size: 18px;
+    color: #000;
+    background: white;
+    width: 190px;
+    height: 80px;
+    border: none;
+}
+
+.banner .form-search .dropdown .dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.banner .form-search button:last-child {
+    border: 5px solid white;
+    width: 123px;
+    height: 80px;
+    font-size: 18px;
+}
+
+/* End for homepage */
+
+/* Login, register style */
+.form-segment {
+    background-color: #fff;
+    width: 50%;
+    height: 60%;
+    border-radius: 15px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-segment h2 {
+    color: #fff;
+}
+
+.form-segment p {
+    color: #fff;
+    font-size: 20px;
+}
+
+.form-segment h1 {
+    color: var(--main-bg-color);
+    font-weight: 700;
+}
+
+.form-segment div:first-child {
+    background-color: var(--main-bg-color);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.form-segment .btn {
+    height: auto;
+}
+
+.form-segment .btn.btn-primary {
+    font-weight: 500;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+.form-segment .btn.btn-primary a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-segment input {
+    display: block;
+    background: #F4F8F7;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 50px;
+    width: 70%;
+    padding: 0 30px;
+    margin: 10px auto;
+}
+
+.form-segment input:focus-visible {
+    border: none;
+    outline: none;
+}
+
+.form-segment input::placeholder {
+    color: #ccc;
+}
+
+.form-login input[type=text] {
+    background-color: #F4F8F7;
+    width: 70%;
+    font-size: 20px;
+}
+/* End for login, register */
+
+/* ------------------------------------------------------- */
+
+/* Discover Style */
+.search-keyword span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+input[type=number],
+input[type=text],
+input[type=email] {
+    display: block;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    height: 50px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 10px auto;
+}
+
+input:focus-visible {
+    border: none;
+    outline: none;
+}
+
+.search-keyword span:nth-of-type(2) {
+    color: var(--main-bg-color);
+}
+
+.card-property {
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.card-property img.thumbnail {
+    border-radius: 10px;
+}
+
+.card-property p {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-property span:first-child {
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--main-bg-color);
+}
+
+.utilities-filter input {
+    width: 40% !important;
+    padding: 0 0 !important;
+    text-align: center;
+}
+
+/* End Discover */
+
+/* Price Range Style */
+.range_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sliders_control {
+    position: relative;
+    min-height: 50px;
+}
+
+.form_control {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    color: #635a5a;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    background: #f7f7f7;
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+    box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
+    -webkit-box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
+}
+
+input[type=number] {
+    color: #000;
+    width: 160px;
+    height: 50px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+}
+
+input[type=number]:focus-visible {
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 0;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    background-color: #C6C6C6;
+    pointer-events: none;
+}
+
+#fromSlider {
+    height: 0;
+    z-index: 1;
+}
+/* End Price Range */
+
+/* ---------------------------------------------------- */
+
+/* Property Style */
+.property .renting-information {
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.property .renting-information p{
+    font-weight: 500;
+}
+
+.property .renting-information input {
+    font-size: 18px;
+    background: #F4F8F7;
+    padding-inline: 15px;
+}
+
+.property .renting-information .renting-information--row {
+    margin-block: 25px;
+}
+
+.property .renting-information .divider {
+    border-bottom: 1px solid #ccc;
+}
+
+.property .renting-information span span {
+    color: goldenrod;
+}
+
+.property .renting-information .btn.btn-primary {
+    border-radius: 30px;
+}
+
+.property .request-status {
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.property .owner-info {
+    border-radius: 20px;
+}
+
+.property .owner-info .btn a:hover {
+    color: green;
+}
+
+.property .utilities-fee {
+    border-radius: 20px;
+}
+
+.property .utilities-fee .utilities-fee--row span:nth-of-type(2){
+    float: right;
+}
+/* End Property */
+
+
+#footer {
+    position: relative;
+    margin-top: -315px;
+    height: 315px;
+    clear: both;
+    background: #1A242F;
+    color: #ccc;
+}
+
+#footer p {
+    color: #ccc;
+}
+
+#footer h3 {
+    color: #fff;
+}
+
+#footer a {
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+    line-height: 40px;
+}
+
+#footer a:hover {
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+}
+
+#footer .social i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#footer .copyright {
+    border-top: 1px solid #303A44;
+}
+
+#footer .copyright p {
+    line-height: 40px;
+}
+
+
